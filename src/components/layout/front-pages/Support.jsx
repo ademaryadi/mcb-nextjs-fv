@@ -29,22 +29,15 @@ import {
 import Link from '@components/Link'
 import CustomAvatar from '@core/components/mui/Avatar'
 
-const publicationData = [
+// Constants
+const supportData = [
   {
-    title: 'Berita',
-    href: '/misc/under-maintenance'
+    title: 'Volunteer / Magang',
+    href: '/volunteer'
   },
   {
-    title: 'Hasil Kerjasama',
-    href: '/misc/under-maintenance'
-  },
-  {
-    title: 'Hasil Penelitian/Pengembangan',
-    href: '/misc/coming-soon'
-  },
-  {
-    title: 'Pustaka',
-    href: '/misc/401-not-authorized'
+    title: 'MCB Shop',
+    href: '/shop'
   }
 ]
 
@@ -85,7 +78,7 @@ const MenuWrapper = props => {
   )
 }
 
-const Publikasi = props => {
+const Support = props => {
   // Props
   const { isBelowLgScreen, isDrawerOpen, setIsDrawerOpen } = props
 
@@ -186,7 +179,7 @@ const Publikasi = props => {
               ...getReferenceProps()
             })}
       >
-        <span>Publikasi</span>
+        <span>Dukung Kami</span>
         <i
           className={classnames(
             {
@@ -207,55 +200,14 @@ const Publikasi = props => {
         isMounted={isMounted}
         styles={styles}
       >
-        {/* <div className='flex flex-col gap-4'>
-          <div className='flex gap-3 items-center'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-layout-grid' />
-            </CustomAvatar>
-            <Typography variant='h6'>Profil</Typography>
-          </div>
-          {pageData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/front-pages' + page.href}
-              className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
-                'text-primary': pathname.includes('/front-pages' + page.href)
-              })}
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div>
         <div className='flex flex-col gap-4'>
-          <div className='flex gap-3 items-center'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-lock' />
-            </CustomAvatar>
-            <Typography variant='h6'>Layanan</Typography>
-          </div>
-          {authData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages/auth' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div> */}
-        <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
+          {/* <div className='flex items-center gap-3'>
             <CustomAvatar variant='rounded' color='primary' skin='light'>
               <i className='tabler-photo' />
             </CustomAvatar>
-            <Typography variant='h6'>Berita & Publikasi</Typography>
-          </div>
-          {publicationData.map((page, index) => (
+            <Typography variant='h6'>Berita</Typography>
+          </div> */}
+          {supportData.map((page, index) => (
             <Link
               key={index}
               href={'/pages' + page.href}
@@ -273,4 +225,4 @@ const Publikasi = props => {
   )
 }
 
-export default Publikasi
+export default Support

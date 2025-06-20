@@ -22,6 +22,7 @@ import { useIntersection } from '@/hooks/useIntersection'
 // Component Imports
 import TentangKami from './TentangKami'
 import Publikasi from './Publikasi'
+import Support from './Support'
 
 const Wrapper = props => {
   // Props
@@ -116,16 +117,6 @@ const FrontMenu = props => {
       >
         Layanan
       </Typography> */}
-      <Typography
-        color='text.primary'
-        component={Link}
-        href='/front-pages/landing-page#contact-us'
-        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary': intersections['contact-us']
-        })}
-      >
-        Kontak
-      </Typography>
       <TentangKami
         mode={mode}
         isBelowLgScreen={isBelowLgScreen}
@@ -138,14 +129,21 @@ const FrontMenu = props => {
         isDrawerOpen={isDrawerOpen}
         setIsDrawerOpen={setIsDrawerOpen}
       />
+      <Support
+        mode={mode}
+        isBelowLgScreen={isBelowLgScreen}
+        isDrawerOpen={isDrawerOpen}
+        setIsDrawerOpen={setIsDrawerOpen}
+      />
       <Typography
-        component={Link}
         color='text.primary'
-        href='/'
-        target='_blank'
-        className='font-medium plb-3 pli-1.5 hover:text-primary'
+        component={Link}
+        href='/front-pages/landing-page#contact-us'
+        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
+          'text-primary': intersections['contact-us']
+        })}
       >
-        Dukung Kami
+        Hubungi Kami
       </Typography>
     </Wrapper>
   )
