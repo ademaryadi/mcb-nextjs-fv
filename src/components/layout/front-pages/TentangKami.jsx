@@ -33,7 +33,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 const pageData = [
   {
     title: 'Profil Lembaga',
-    href: '/pricing'
+    href: '/mcb'
   },
   {
     title: 'Struktur Organisasi',
@@ -231,7 +231,7 @@ const TentangKami = props => {
         className={classnames('flex items-center gap-2 font-medium plb-3 pli-1.5 hover:text-primary', {
           'text-primary':
             pathname === '/front-pages/payment' ||
-            pathname === '/front-pages/pricing' ||
+            pathname === '/mcb' ||
             pathname === '/front-pages/checkout' ||
             pathname === '/front-pages/help-center' ||
             pathname === '/front-pages/help-center/article/how-to-add-product-in-cart'

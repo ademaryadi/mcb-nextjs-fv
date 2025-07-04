@@ -87,36 +87,16 @@ const FrontMenu = props => {
       >
         Beranda
       </Typography>
-      {/* <Typography
+      <Typography
         color='text.primary'
         component={Link}
-        href='/front-pages/landing-page#features'
+        href='/front-pages/profile'
         className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary': intersections.features
+          'text-primary': intersections['contact-us']
         })}
       >
-        Berita & Publikasi
-      </Typography> */}
-      {/* <Typography
-        color='text.primary'
-        component={Link}
-        href='/front-pages/landing-page#team'
-        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary': intersections.team
-        })}
-      >
-        Profil
-      </Typography> */}
-      {/* <Typography
-        color='text.primary'
-        component={Link}
-        href='/front-pages/landing-page#faq'
-        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary': intersections.faq
-        })}
-      >
-        Layanan
-      </Typography> */}
+        Agenda
+      </Typography>
       <TentangKami
         mode={mode}
         isBelowLgScreen={isBelowLgScreen}
@@ -135,6 +115,16 @@ const FrontMenu = props => {
         isDrawerOpen={isDrawerOpen}
         setIsDrawerOpen={setIsDrawerOpen}
       />
+      <Typography
+        color='text.primary'
+        component={Link}
+        href='/front-pages/landing-page#contact-us'
+        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
+          'text-primary': intersections['contact-us']
+        })}
+      >
+        PPID
+      </Typography>
       <Typography
         color='text.primary'
         component={Link}

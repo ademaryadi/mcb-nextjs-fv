@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import { MapPin, Clock, DollarSign, Star } from 'lucide-react'
 
+import Button from '@mui/material/Button'
+
 export const Museums = () => {
   const museums = [
     {
@@ -96,9 +98,10 @@ export const Museums = () => {
                 </div>
 
                 <div className='mt-6 pt-4 border-t border-border'>
-                  <button className='w-full bg-primary text-primary-foreground py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors'>
+                  {/* <button className='w-full bg-primary text-primary py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors'>
                     Visit Museum
-                  </button>
+                  </button> */}
+                  <Button variant='contained'>Visit Museum</Button>
                 </div>
               </div>
             </div>

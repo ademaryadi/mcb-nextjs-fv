@@ -58,7 +58,7 @@ export const HeroSection = () => {
   }
 
   return (
-    <section id='home' className='relative h-screen flex items-end justify-center overflow-hidden'>
+    <section id='home' className='h-screen flex items-end justify-center overflow-hidden'>
       <div className='absolute inset-0 bg-black/40 z-10'></div>
 
       {slides.map((slide, index) => (
