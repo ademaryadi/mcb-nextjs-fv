@@ -45,10 +45,10 @@ const Footer = ({ mode }) => {
                   <Logo color='var(--mui-palette-common-white)' />
                 </Link>
                 <Typography color='white' className='md:max-is-[390px] opacity-[0.78]'>
-                  Most Powerful & Comprehensive 🤩 React NextJS Admin Template with Elegant Material Design & Unique
-                  Layouts.
+                  Jl. Medan Merdeka Barat No.12, Kota Jakarta Pusat, Daerah Khusus Jakarta, Indonesia Telepon: +62 21
+                  3868172
                 </Typography>
-                <div className='flex items-end'>
+                <div className='flex items-end hidden'>
                   <CustomTextField
                     size='small'
                     className={styles.inputBorder}
@@ -81,18 +81,16 @@ const Footer = ({ mode }) => {
               </div>
             </Grid>
             <Grid size={{ xs: 12, sm: 3, lg: 2 }}>
-              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'>
-                Pages
-              </Typography>
+              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'></Typography>
               <div className='flex flex-col gap-4'>
-                <Typography component={Link} href='/front-pages/pricing' color='white' className='opacity-[0.78]'>
-                  Pricing
+                <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
+                  Beranda
                 </Typography>
-                <Link href='/front-pages/payment' className='flex items-center gap-[10px]'>
+                <Link href='/front-pages/profile' className='flex items-center gap-[10px]'>
                   <Typography color='white' className='opacity-[0.78]'>
-                    Payment
+                    Agenda
                   </Typography>
-                  <Chip label='New' color='primary' size='small' />
+                  <Chip label='New' color='primary' size='small' className='hidden' />
                 </Link>
                 <Typography
                   component={Link}
@@ -100,38 +98,51 @@ const Footer = ({ mode }) => {
                   color='white'
                   className='opacity-[0.78]'
                 >
-                  Maintenance
+                  Tentang Kami
                 </Typography>
                 <Typography component={Link} href='/pages/misc/coming-soon' color='white' className='opacity-[0.78]'>
-                  Coming Soon
+                  Publikasi
                 </Typography>
               </div>
             </Grid>
             <Grid size={{ xs: 12, sm: 3, lg: 2 }}>
-              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'>
-                Products
-              </Typography>
+              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'></Typography>
               <div className='flex flex-col gap-4'>
                 <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
-                  Page builder
+                  Dukung Kami
                 </Typography>
-                <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
-                  Admin Dashboards
+                <Typography
+                  component={Link}
+                  href='/front-pages/landing-page#contact-us'
+                  color='white'
+                  className='opacity-[0.78]'
+                >
+                  PPID
                 </Typography>
-                <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
-                  UI Kits
+                <Typography
+                  component={Link}
+                  href='/front-pages/landing-page#contact-us'
+                  color='white'
+                  className='opacity-[0.78]'
+                >
+                  Hubungi Kami
                 </Typography>
-                <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
+                <Typography
+                  component={Link}
+                  href='/front-pages/landing-page'
+                  color='white'
+                  className='opacity-[0.78] hidden'
+                >
                   Illustrations
                 </Typography>
               </div>
             </Grid>
             <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'>
+              <Typography color='white' className='font-medium mbe-6 opacity-[0.92] hidden'>
                 Download our App
               </Typography>
               <div className='flex flex-col gap-4'>
-                <Link className='bg-[#282C3E] bs-[56px] is-[211px] rounded'>
+                <Link className='bg-[#282C3E] bs-[56px] is-[211px] rounded hidden'>
                   <div className='flex items-center pli-5 plb-[7px] gap-6'>
                     <img src='/images/front-pages/apple-icon.png' alt='apple store' className='bs-[34px]' />
                     <div className='flex flex-col items-start'>
@@ -144,7 +155,7 @@ const Footer = ({ mode }) => {
                     </div>
                   </div>
                 </Link>
-                <Link className='bg-[#282C3E] bs-[56px] is-[211px] rounded'>
+                <Link className='bg-[#282C3E] bs-[56px] is-[211px] rounded hidden'>
                   <div className='flex items-center pli-5 plb-[7px] gap-6'>
                     <img src='/images/front-pages/google-play-icon.png' alt='Google play' className='bs-[34px]' />
                     <div className='flex flex-col items-start'>
@@ -165,11 +176,14 @@ const Footer = ({ mode }) => {
       <div className='bg-[#211B2C]'>
         <div
           className={classnames(
-            'flex flex-wrap items-center justify-center sm:justify-between gap-4 plb-[15px]',
+            'flex flex-wrap items-center justify-center sm:justify-center gap-4 plb-[15px]',
             frontCommonStyles.layoutSpacing
           )}
         >
-          <Typography className='text-white' variant='body2'>
+          <Typography color='white' variant='body2'>
+            <span>{`COPYRIGHT © ${new Date().getFullYear()} ALL RIGHTS RESERVED`}</span>
+          </Typography>
+          <Typography className='text-white hidden' variant='body2'>
             <span>{`© ${new Date().getFullYear()}, Made with `}</span>
             <span>{`❤️`}</span>
             <span>{` by `}</span>
@@ -177,7 +191,7 @@ const Footer = ({ mode }) => {
               Pixinvent
             </Link>
           </Typography>
-          <div className='flex gap-1.5 items-center'>
+          <div className='flex gap-1.5 items-center hidden'>
             <IconButton component={Link} size='small' href='https://github.com/pixinvent' target='_blank'>
               <i className='tabler-brand-github-filled text-white text-lg' />
             </IconButton>
