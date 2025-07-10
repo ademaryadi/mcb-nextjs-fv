@@ -33,19 +33,19 @@ import CustomAvatar from '@core/components/mui/Avatar'
 const pageData = [
   {
     title: 'Profil Lembaga',
-    href: '/mcb'
+    href: '/profil-lembaga'
   },
   {
     title: 'Struktur Organisasi',
-    href: '/payment'
+    href: '/struktur-organisasi'
   },
   {
     title: 'Visi & Misi',
-    href: '/checkout'
+    href: '/visi-misi'
   },
   {
     title: 'Realisasi Anggaran',
-    href: '/help-center'
+    href: '/realisasi-anggaran'
   }
 ]
 

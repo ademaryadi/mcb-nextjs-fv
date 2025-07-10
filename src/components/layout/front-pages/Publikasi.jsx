@@ -32,19 +32,19 @@ import CustomAvatar from '@core/components/mui/Avatar'
 const publicationData = [
   {
     title: 'Berita',
-    href: '/misc/under-maintenance'
+    href: '/berita'
   },
   {
     title: 'Hasil Kerjasama',
-    href: '/misc/under-maintenance'
+    href: '/hasil-kerjasama'
   },
   {
     title: 'Hasil Penelitian/Pengembangan',
-    href: '/misc/coming-soon'
+    href: '/hasil-litbang'
   },
   {
     title: 'Pustaka',
-    href: '/misc/401-not-authorized'
+    href: '/pustaka'
   }
 ]
 
@@ -258,8 +258,7 @@ const Publikasi = props => {
           {publicationData.map((page, index) => (
             <Link
               key={index}
-              href={'/pages' + page.href}
-              target='_blank'
+              href={'/front-pages' + page.href}
               className='flex items-center gap-3 focus:outline-none hover:text-primary'
               onClick={handleLinkClick}
             >

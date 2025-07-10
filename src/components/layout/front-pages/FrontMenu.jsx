@@ -118,7 +118,7 @@ const FrontMenu = props => {
       <Typography
         color='text.primary'
         component={Link}
-        href='/front-pages/landing-page#contact-us'
+        href='/front-pages/ppid'
         className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
           'text-primary': intersections['contact-us']
         })}
@@ -128,7 +128,7 @@ const FrontMenu = props => {
       <Typography
         color='text.primary'
         component={Link}
-        href='/front-pages/hello'
+        href='/front-pages/landing-page#contact-us'
         className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
           'text-primary': intersections['contact-us']
         })}

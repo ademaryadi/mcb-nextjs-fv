@@ -210,8 +210,7 @@ const Support = props => {
           {supportData.map((page, index) => (
             <Link
               key={index}
-              href={'/pages' + page.href}
-              target='_blank'
+              href={'/front-pages' + page.href}
               className='flex items-center gap-3 focus:outline-none hover:text-primary'
               onClick={handleLinkClick}
             >
