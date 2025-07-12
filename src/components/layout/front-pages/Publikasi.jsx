@@ -35,16 +35,12 @@ const publicationData = [
     href: '/berita'
   },
   {
-    title: 'Hasil Kerjasama',
-    href: '/hasil-kerjasama'
+    title: 'Kerjasama',
+    href: '/kerjasama'
   },
   {
-    title: 'Hasil Penelitian/Pengembangan',
-    href: '/hasil-litbang'
-  },
-  {
-    title: 'Pustaka',
-    href: '/pustaka'
+    title: 'Hasil Penelitian',
+    href: '/hasil-penelitian'
   }
 ]
 
@@ -56,7 +52,7 @@ const MenuWrapper = props => {
     return (
       <FloatingPortal>
         {isMounted && (
-          <div ref={refs.setFloating} className='z-[1201] lg:z-[11]' {...getFloatingProps()} style={floatingStyles}>
+          <div ref={refs.setFloating} className='z-[1201] lg:z-[1100]' {...getFloatingProps()} style={floatingStyles}>
             <div
               className='flex gap-8 p-8'
               style={{
@@ -67,7 +63,8 @@ const MenuWrapper = props => {
                 borderRadius: 'var(--mui-shape-borderRadius)',
                 outline: 0,
                 boxShadow: 'var(--mui-shadows-3)',
-                maxBlockSize: `calc((var(--vh, 1vh) * 100) - ${top}px)`
+                maxBlockSize: `calc((var(--vh, 1vh) * 100) - ${top}px)`,
+                marginTop: '10px'
               }}
             >
               {children}
@@ -138,7 +135,7 @@ const Publikasi = props => {
       blockPointerEvents: true
     }),
     restMs: 25,
-    delay: { open: 75 }
+    delay: { open: 50 }
   })
 
   const dismiss = useDismiss(context)
@@ -168,9 +165,9 @@ const Publikasi = props => {
         color='text.primary'
         className={classnames('flex items-center gap-2 font-medium plb-3 pli-1.5 hover:text-primary', {
           'text-primary':
-            pathname === '/front-pages/payment' ||
-            pathname === '/front-pages/pricing' ||
-            pathname === '/front-pages/checkout' ||
+            pathname === '/front-pages/berita' ||
+            pathname === '/front-pages/kerjasama' ||
+            pathname === '/front-pages/hasil-penelitian' ||
             pathname === '/front-pages/help-center' ||
             pathname === '/front-pages/help-center/article/how-to-add-product-in-cart'
         })}
@@ -253,13 +250,15 @@ const Publikasi = props => {
             <CustomAvatar variant='rounded' color='primary' skin='light'>
               <i className='tabler-photo' />
             </CustomAvatar>
-            <Typography variant='h6'>Berita & Publikasi</Typography>
+            <Typography variant='h6'>Berita</Typography>
           </div>
           {publicationData.map((page, index) => (
             <Link
               key={index}
               href={'/front-pages' + page.href}
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
+              className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
+                'text-primary': pathname.includes('/front-pages' + page.href)
+              })}
               onClick={handleLinkClick}
             >
               <i className='tabler-circle text-[10px]' />

@@ -35,7 +35,7 @@ const LandingPageWrapper = ({ mode }) => {
       <UsefulFeature />
       <CustomerReviews />
       <Events />
-      <Museums />
+      {/* <Museums /> */}
       {/* <OurTeam /> */}
       {/* <Pricing /> */}
       {/* <ProductStat /> */}
