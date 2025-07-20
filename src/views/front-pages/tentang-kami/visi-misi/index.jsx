@@ -1,10 +1,16 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
+import Collections from '../../landing-page/Collections'
+import ContactUs from '../../landing-page/ContactUs'
+import AboutSection from './AboutSection'
+import VisionMissionSection from './VisionMissionSection'
 
-const VisiMisiWrapper = ({ mode }) => {
+const VisiMisiWrapper = () => {
   return (
-    <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>Visi & Misi</h1>
-      <ComingSoon />
+    <div className='bg-white flex flex-col overflow-hidden items-center pb-5'>
+      <AboutSection />
+      <Collections />
+      <VisionMissionSection />
+      <ContactUs />
     </div>
   )
 }

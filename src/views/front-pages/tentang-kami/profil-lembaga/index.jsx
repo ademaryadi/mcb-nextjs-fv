@@ -1,12 +1,23 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
 
-const ProfilLembagaWrapper = () => {
+import ContactUs from '../../landing-page/ContactUs'
+import HeroSection from '../../landing-page/HeroSection'
+import CollectionSection from './CollectionSection'
+import ConservationSection from './ConservationSection'
+import EducationSection from './EducationSection'
+import PartnershipSection from './PartnershipSection'
+
+const Index = ({ slides }) => {
   return (
-    <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>Profil Lembaga</h1>
-      <ComingSoon />
-    </div>
+    <main>
+      <HeroSection slides={slides} />
+      <CollectionSection />
+      <ConservationSection />
+      <EducationSection />
+      <PartnershipSection />
+      <ContactUs />
+    </main>
   )
 }
 
-export default ProfilLembagaWrapper
+export default Index

@@ -1,10 +1,10 @@
-import ComingSoon from '@/views/ComingSoon'
+'use client'
+import HeroSection from './HeroSection'
 
 const PpidWrapper = () => {
   return (
     <div className='bg-backgroundPaper'>
-      <h1 className='text-3xl font-bold text-center'>PPID</h1>
-      <ComingSoon />
+      <HeroSection />
     </div>
   )
 }

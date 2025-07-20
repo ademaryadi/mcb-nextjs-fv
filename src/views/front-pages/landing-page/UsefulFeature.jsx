@@ -22,6 +22,7 @@ import Document from '@assets/svg/front-pages/landing-page/Document'
 
 // Styles Imports
 import frontCommonStyles from '@views/front-pages/styles.module.css'
+import Collections from './Collections'
 
 // Data
 const feature = [
@@ -108,7 +109,8 @@ const UsefulFeature = () => {
               Cagar Budaya secara kolektif berkontribusi untuk membuka wawasan apresiasi mendalam terhadap warisan
               budaya Indonesia yang beragam.
             </p>
-            <div className='grid grid-cols-4 gap-3 pt-3'>
+            <Collections />
+            {/* <div className='grid grid-cols-4 gap-3 pt-3'>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-primary'>18</div>
                 <div className='text-sm text-muted-foreground'>Museum</div>
@@ -125,7 +127,7 @@ const UsefulFeature = () => {
                 <div className='text-3xl font-bold text-primary'>32</div>
                 <div className='text-sm text-muted-foreground'>Cagar Budaya</div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className='relative'>
             <img

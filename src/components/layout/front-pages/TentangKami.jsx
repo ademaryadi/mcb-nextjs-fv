@@ -42,29 +42,51 @@ const pageData = [
   {
     title: 'Visi & Misi',
     href: '/visi-misi'
-  },
-  {
-    title: 'Realisasi Anggaran',
-    href: '/realisasi-anggaran'
   }
 ]
 
 const layananData = [
   {
-    title: 'Ticketing',
-    href: '/ticketing'
+    title: 'Layanan Ticket Museum',
+    href: '/layanan-ticket-museum'
   },
   {
-    title: 'Layanan Pemanfaatan Aset',
-    href: '/layanan-pemanfaatan-aset'
+    title: 'Layanan Ticket Event',
+    href: '/layanan-ticket-event'
+  },
+  {
+    title: 'Collection Management System',
+    href: '/collection-management-system'
   },
   {
     title: 'Layanan Konservasi',
     href: '/layanan-konservasi'
+  }
+]
+
+const supportData = [
+  {
+    title: 'Volunteer / Magang',
+    href: '/volunteer'
   },
   {
-    title: 'CMS',
-    href: '/cms'
+    title: 'MCB Shop',
+    href: '/shop'
+  },
+  {
+    title: 'Hubungi Kami',
+    href: '/hubungi-kami'
+  }
+]
+
+const sopData = [
+  {
+    title: 'Peraturan',
+    href: '/peraturan'
+  },
+  {
+    title: 'SOP',
+    href: '/sop'
   }
 ]
 
@@ -80,21 +102,6 @@ const authData = [
   {
     title: 'Layanan Konservasi',
     href: '/register-v1'
-  }
-]
-
-const othersData = [
-  {
-    title: 'Hasil Kerjasama',
-    href: '/misc/under-maintenance'
-  },
-  {
-    title: 'Hasil Penelitian/Pengembangan',
-    href: '/misc/coming-soon'
-  },
-  {
-    title: 'Pustaka',
-    href: '/misc/401-not-authorized'
   }
 ]
 
@@ -126,17 +133,6 @@ const othersDataMenu = [
   {
     title: 'Two Steps (Cover)',
     href: '/auth/two-steps-v2'
-  }
-]
-
-const supportData = [
-  {
-    title: 'Volunteer / Magang',
-    href: '/volunteer'
-  },
-  {
-    title: 'MCB Shop',
-    href: '/shop'
   }
 ]
 
@@ -265,13 +261,15 @@ const TentangKami = props => {
             pathname === '/front-pages/profil-lembaga' ||
             pathname === '/front-pages/struktur-organisasi' ||
             pathname === '/front-pages/visi-misi' ||
-            pathname === '/front-pages/realisasi-anggaran' ||
-            pathname === '/front-pages/ticketing' ||
-            pathname === '/front-pages/layanan-pemanfaatan-aset' ||
+            pathname === '/front-pages/layanan-ticket-museum' ||
+            pathname === '/front-pages/layanan-ticket-event' ||
+            pathname === '/front-pages/collection-management-system' ||
             pathname === '/front-pages/layanan-konservasi' ||
-            pathname === '/front-pages/cms' ||
             pathname === '/front-pages/volunteer' ||
-            pathname === '/front-pages/shop'
+            pathname === '/front-pages/shop' ||
+            pathname === '/front-pages/hubungi-kami' ||
+            pathname === '/front-pages/peraturan' ||
+            pathname === '/front-pages/sop'
         })}
         {...(isBelowLgScreen
           ? {
@@ -348,68 +346,8 @@ const TentangKami = props => {
             </Link>
           ))}
         </div>
-        <div className='flex flex-col gap-4 hidden'>
+        <div className='flex flex-col gap-4 '>
           <div className='flex gap-3 items-center'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-lock' />
-            </CustomAvatar>
-            <Typography variant='h6'>Hubungi Kami</Typography>
-          </div>
-          {authData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages/auth' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div>
-        <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-photo' />
-            </CustomAvatar>
-            <Typography variant='h6'>Peraturan</Typography>
-          </div>
-          {othersData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary hidden'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div>
-        <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-photo' />
-            </CustomAvatar>
-            <Typography variant='h6'>SOP</Typography>
-          </div>
-          {othersData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary hidden'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div>
-        <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
             <CustomAvatar variant='rounded' color='primary' skin='light'>
               <i className='tabler-layout-grid' />
             </CustomAvatar>
@@ -429,11 +367,27 @@ const TentangKami = props => {
             </Link>
           ))}
         </div>
-        {/* {!isBelowLgScreen && (
-          <div className='flex bg-backgroundDefault p-2 rounded'>
-            <img src='/images/front-pages/dropdown-image.png' width='385' alt='dropdown image' className='rounded' />
+        <div className='flex flex-col gap-4'>
+          <div className='flex items-center gap-3'>
+            <CustomAvatar variant='rounded' color='primary' skin='light'>
+              <i className='tabler-layout-grid' />
+            </CustomAvatar>
+            <Typography variant='h6'>Peraturan & SOP</Typography>
           </div>
-        )} */}
+          {sopData.map((page, index) => (
+            <Link
+              key={index}
+              href={'/front-pages' + page.href}
+              className={classnames('flex items-center gap-3 focus:outline-none hover:text-primary', {
+                'text-primary': pathname.includes('/front-pages' + page.href)
+              })}
+              onClick={handleLinkClick}
+            >
+              <i className='tabler-circle text-[10px]' />
+              <span>{page.title}</span>
+            </Link>
+          ))}
+        </div>
       </MenuWrapper>
     </Tag>
   )

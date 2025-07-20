@@ -81,7 +81,6 @@ const FrontMenu = props => {
             !intersections.features &&
             !intersections.team &&
             !intersections.faq &&
-            !intersections['contact-us'] &&
             pathname === '/front-pages/landing-page'
         })}
       >
@@ -96,16 +95,6 @@ const FrontMenu = props => {
         })}
       >
         Agenda
-      </Typography>
-      <Typography
-        color='text.primary'
-        component={Link}
-        href='/front-pages/museum-network'
-        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary': pathname === '/front-pages/museum-network'
-        })}
-      >
-        Unit Museum dan Cagar Budaya
       </Typography>
       <TentangKami
         mode={mode}
@@ -129,7 +118,7 @@ const FrontMenu = props => {
       >
         PPID
       </Typography>
-      <Typography
+      {/* <Typography
         color='text.primary'
         component={Link}
         href='/front-pages/landing-page#contact-us'
@@ -139,6 +128,16 @@ const FrontMenu = props => {
       >
         Hubungi Kami
       </Typography>
+      <Typography
+        color='text.primary'
+        component={Link}
+        href='/front-pages/museum-network'
+        className={classnames('font-medium plb-3 pli-1.5 hover:text-primary', {
+          'text-primary': pathname === '/front-pages/museum-network'
+        })}
+      >
+        Unit Museum dan Cagar Budaya
+      </Typography> */}
     </Wrapper>
   )
 }

@@ -7,17 +7,12 @@ import { useEffect } from 'react'
 import HeroSection from './HeroSection'
 import UsefulFeature from './UsefulFeature'
 import CustomerReviews from './CustomerReviews'
-import OurTeam from './OurTeam'
 import Events from './Events'
-import Museums from './Museums'
-import Pricing from './Pricing'
-import ProductStat from './ProductStat'
-import Faqs from './Faqs'
-import GetStarted from './GetStarted'
 import ContactUs from './ContactUs'
 import { useSettings } from '@core/hooks/useSettings'
+import Museums from './Museums'
 
-const LandingPageWrapper = ({ mode }) => {
+const LandingPageWrapper = ({ mode, slides }) => {
   // Hooks
   const { updatePageSettings } = useSettings()
 
@@ -31,16 +26,11 @@ const LandingPageWrapper = ({ mode }) => {
 
   return (
     <div className='bg-backgroundPaper'>
-      <HeroSection mode={mode} />
+      <HeroSection mode={mode} slides={slides} />
       <UsefulFeature />
       <CustomerReviews />
       <Events />
-      {/* <Museums /> */}
-      {/* <OurTeam /> */}
-      {/* <Pricing /> */}
-      {/* <ProductStat /> */}
-      {/* <Faqs /> */}
-      {/* <GetStarted mode={mode} /> */}
+      <Museums />
       <ContactUs />
     </div>
   )
