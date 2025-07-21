@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 
 import { Calendar, MapPin, Clock, ChevronLeft, ChevronRight } from 'lucide-react'
 
-export const AgendaPage = () => {
+import HeroSection from './landing-page/HeroSection'
+
+export const AgendaPage = ({ slides }) => {
   const [currentEvent, setCurrentEvent] = useState(0)
 
   const events = [
@@ -70,7 +72,8 @@ export const AgendaPage = () => {
   }
 
   return (
-    <section id='events' className='py-20 bg-background'>
+    <section id='events' className='bg-background pb-20'>
+      <HeroSection slides={slides} />
       <div className='container mx-auto px-4'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl md:text-5xl font-bold text-foreground mb-6'>Upcoming Events</h2>

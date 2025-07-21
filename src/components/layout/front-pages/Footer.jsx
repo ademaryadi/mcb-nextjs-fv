@@ -86,7 +86,7 @@ const Footer = ({ mode }) => {
                 <Typography component={Link} href='/front-pages/landing-page' color='white' className='opacity-[0.78]'>
                   Beranda
                 </Typography>
-                <Link href='/front-pages/profile' className='flex items-center gap-[10px]'>
+                <Link href='/front-pages/agenda' className='flex items-center gap-[10px]'>
                   <Typography color='white' className='opacity-[0.78]'>
                     Agenda
                   </Typography>
@@ -135,6 +135,32 @@ const Footer = ({ mode }) => {
                 >
                   Illustrations
                 </Typography>
+              </div>
+            </Grid>
+            <Grid size={{ xs: 12, sm: 3, lg: 2 }}>
+              <Typography color='white' className='font-medium mbe-6 opacity-[0.92]'></Typography>
+              <div className='items-centers opacity-[0.78] mt-[-10px]'>
+                <IconButton component={Link} size='small' href='https://www.facebook.com/pixinvents/' target='_blank'>
+                  <i className='tabler-brand-facebook-filled text-white text-[1rem]' />
+                  <span className='text-white text-[1rem] ms-1'>Facebook</span>
+                </IconButton>
+                <IconButton component={Link} size='small' href='https://instagram.com/pixinvent' target='_blank'>
+                  <i className='tabler-brand-instagram-filled text-white text-[1rem]' />
+                  <span className='text-white text-[1rem] ms-1 me-5'>Instagram</span>
+                </IconButton>
+                <IconButton component={Link} size='small' href='https://x.com/pixinvents' target='_blank'>
+                  <i className='tabler-brand-twitter-filled text-white text-[1rem]' />
+                  <span className='text-white text-[1rem] ms-1'>Twitter</span>
+                </IconButton>
+                <IconButton
+                  component={Link}
+                  size='small'
+                  href='https://www.youtube.com/channel/UClOcB3o1goJ293ri_Hxpklg'
+                  target='_blank'
+                >
+                  <i className='tabler-brand-youtube-filled text-white text-[1rem]' />
+                  <span className='text-white text-[1rem] ms-1 me-5'>Youtube</span>
+                </IconButton>
               </div>
             </Grid>
             <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
