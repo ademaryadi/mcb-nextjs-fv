@@ -29,84 +29,14 @@ import {
 import Link from '@components/Link'
 import CustomAvatar from '@core/components/mui/Avatar'
 
-// Constants
-const pageData = [
+const publicationData = [
   {
-    title: 'Profil Lembaga',
-    href: '/pricing'
-  },
-  {
-    title: 'Struktur Organisasi',
-    href: '/payment'
-  },
-  {
-    title: 'Visi & Misi',
-    href: '/checkout'
+    title: 'Berita',
+    href: '/berita'
   },
   {
     title: 'Realisasi Anggaran',
-    href: '/help-center'
-  }
-]
-
-const authData = [
-  {
-    title: 'Layanan Bisnis',
-    href: '/login-v1'
-  },
-  {
-    title: 'Collection Management System',
-    href: '/login-v2'
-  },
-  {
-    title: 'Layanan Konservasi',
-    href: '/register-v1'
-  }
-]
-
-const othersData = [
-  {
-    title: 'Hasil Kerjasama',
-    href: '/misc/under-maintenance'
-  },
-  {
-    title: 'Hasil Penelitian/Pengembangan',
-    href: '/misc/coming-soon'
-  },
-  {
-    title: 'Pustaka',
-    href: '/misc/401-not-authorized'
-  }
-]
-
-const othersDataMenu = [
-  {
-    title: 'Under Maintenance',
-    href: '/misc/under-maintenance'
-  },
-  {
-    title: 'Coming Soon',
-    href: '/misc/coming-soon'
-  },
-  {
-    title: 'Not Authorized',
-    href: '/misc/401-not-authorized'
-  },
-  {
-    title: 'Verify Email (Basic)',
-    href: '/auth/verify-email-v1'
-  },
-  {
-    title: 'Verify Email (Cover)',
-    href: '/auth/verify-email-v2'
-  },
-  {
-    title: 'Two Steps (Basic)',
-    href: '/auth/two-steps-v1'
-  },
-  {
-    title: 'Two Steps (Cover)',
-    href: '/auth/two-steps-v2'
+    href: '/realisasi-anggaran'
   }
 ]
 
@@ -118,7 +48,7 @@ const MenuWrapper = props => {
     return (
       <FloatingPortal>
         {isMounted && (
-          <div ref={refs.setFloating} className='z-[1201] lg:z-[11]' {...getFloatingProps()} style={floatingStyles}>
+          <div ref={refs.setFloating} className='z-[1201] lg:z-[1100]' {...getFloatingProps()} style={floatingStyles}>
             <div
               className='flex gap-8 p-8'
               style={{
@@ -129,7 +59,8 @@ const MenuWrapper = props => {
                 borderRadius: 'var(--mui-shape-borderRadius)',
                 outline: 0,
                 boxShadow: 'var(--mui-shadows-3)',
-                maxBlockSize: `calc((var(--vh, 1vh) * 100) - ${top}px)`
+                maxBlockSize: `calc((var(--vh, 1vh) * 100) - ${top}px)`,
+                marginTop: '10px'
               }}
             >
               {children}
@@ -200,7 +131,7 @@ const Publikasi = props => {
       blockPointerEvents: true
     }),
     restMs: 25,
-    delay: { open: 75 }
+    delay: { open: 50 }
   })
 
   const dismiss = useDismiss(context)
@@ -229,12 +160,7 @@ const Publikasi = props => {
         component={Link}
         color='text.primary'
         className={classnames('flex items-center gap-2 font-medium plb-3 pli-1.5 hover:text-primary', {
-          'text-primary':
-            pathname === '/front-pages/payment' ||
-            pathname === '/front-pages/pricing' ||
-            pathname === '/front-pages/checkout' ||
-            pathname === '/front-pages/help-center' ||
-            pathname === '/front-pages/help-center/article/how-to-add-product-in-cart'
+          'text-primary': pathname === '/front-pages/berita' || pathname === '/front-pages/realisasi-anggaran'
         })}
         {...(isBelowLgScreen
           ? {
@@ -269,14 +195,8 @@ const Publikasi = props => {
         isMounted={isMounted}
         styles={styles}
       >
-        {/* <div className='flex flex-col gap-4'>
-          <div className='flex gap-3 items-center'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-layout-grid' />
-            </CustomAvatar>
-            <Typography variant='h6'>Profil</Typography>
-          </div>
-          {pageData.map((page, index) => (
+        <div className='flex flex-col gap-4'>
+          {publicationData.map((page, index) => (
             <Link
               key={index}
               href={'/front-pages' + page.href}
@@ -290,71 +210,6 @@ const Publikasi = props => {
             </Link>
           ))}
         </div>
-        <div className='flex flex-col gap-4'>
-          <div className='flex gap-3 items-center'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-lock' />
-            </CustomAvatar>
-            <Typography variant='h6'>Layanan</Typography>
-          </div>
-          {authData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages/auth' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div> */}
-        <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-photo' />
-            </CustomAvatar>
-            <Typography variant='h6'>Berita</Typography>
-          </div>
-          {othersData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div>
-        {/* <div className='flex flex-col gap-4'>
-          <div className='flex items-center gap-3'>
-            <CustomAvatar variant='rounded' color='primary' skin='light'>
-              <i className='tabler-photo' />
-            </CustomAvatar>
-            <Typography variant='h6'>Publikasi</Typography>
-          </div>
-          {othersData.map((page, index) => (
-            <Link
-              key={index}
-              href={'/pages' + page.href}
-              target='_blank'
-              className='flex items-center gap-3 focus:outline-none hover:text-primary'
-              onClick={handleLinkClick}
-            >
-              <i className='tabler-circle text-[10px]' />
-              <span>{page.title}</span>
-            </Link>
-          ))}
-        </div> */}
-        {/* {!isBelowLgScreen && (
-          <div className='flex bg-backgroundDefault p-2 rounded'>
-            <img src='/images/front-pages/dropdown-image.png' width='385' alt='dropdown image' className='rounded' />
-          </div>
-        )} */}
       </MenuWrapper>
     </Tag>
   )

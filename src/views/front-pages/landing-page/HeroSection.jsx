@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-export const HeroSection = () => {
+export const HeroSection = ({ slides }) => {
   const videoRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const slides = [
+  const slidesData = [
     {
       type: 'video',
       src: '/images/videos/video.mp4',
@@ -58,7 +58,7 @@ export const HeroSection = () => {
   }
 
   return (
-    <section id='home' className='relative h-screen flex items-end justify-center overflow-hidden'>
+    <section id='home' className='h-screen flex items-end justify-center overflow-hidden pb-8'>
       <div className='absolute inset-0 bg-black/40 z-10'></div>
 
       {slides.map((slide, index) => (
@@ -110,20 +110,6 @@ export const HeroSection = () => {
         <p className='text-xl md:text-2xl mb-8 opacity-90 animate-fade-in' style={{ animationDelay: '1s' }}>
           {slides[currentSlide].subtitle}
         </p>
-        {/* <div className='space-x-4 animate-fade-in' style={{ animationDelay: '1s' }}>
-          <a
-            href='#about'
-            className='inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200'
-          >
-            Explore Now
-          </a>
-          <a
-            href='#events'
-            className='inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors duration-200'
-          >
-            View Events
-          </a>
-        </div> */}
       </div>
     </section>
   )

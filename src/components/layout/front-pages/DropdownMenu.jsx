@@ -199,8 +199,8 @@ const DropdownMenu = props => {
     handleClose: safePolygon({
       blockPointerEvents: true
     }),
-    restMs: 25,
-    delay: { open: 75 }
+    restMs: 75,
+    delay: { close: 75 }
   })
 
   const dismiss = useDismiss(context)

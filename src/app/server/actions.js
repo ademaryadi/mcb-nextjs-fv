@@ -5,6 +5,7 @@
 'use server'
 
 // Data Imports
+import { pool } from '@/libs/database/dbconn'
 import { db as eCommerceData } from '@/fake-db/apps/ecommerce'
 import { db as academyData } from '@/fake-db/apps/academy'
 import { db as vehicleData } from '@/fake-db/apps/logistics'
@@ -15,6 +16,12 @@ import { db as profileData } from '@/fake-db/pages/userProfile'
 import { db as faqData } from '@/fake-db/pages/faq'
 import { db as pricingData } from '@/fake-db/pages/pricing'
 import { db as statisticsData } from '@/fake-db/pages/widgetExamples'
+
+export const slidesQuery = async () => {
+  const slides = await pool.query('SELECT * FROM hero_sections')
+
+  return slides
+}
 
 export const getEcommerceData = async () => {
   return eCommerceData

@@ -2,7 +2,7 @@
   position: sticky;
   inset-block-start: 0;
   z-index: var(--header-z-index);
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   inline-size: 100%;
@@ -47,7 +47,9 @@
       max-inline-size: 100%;
     }
     @media (min-width: 1920px) {
-      max-inline-size: calc(1440px - 48px);
+      /* max-inline-size: calc(1440px - 48px); */
+
+      max-inline-size: 100%;
     }
 
     .navbarContent {
